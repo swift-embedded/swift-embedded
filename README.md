@@ -1,7 +1,8 @@
 <div style="text-align: right">
-    <img width="90%" src="./resources/2-edited.jpeg"/>    
+    <img width="100%" src="./resources/2-edited.jpeg"/>    
 </div>
 <img width="20%" src="./resources/1-edited.jpeg" align="right"/>
+
 [![Build Status](https://jenkins.dragomirecky.com/job/swift-embedded/job/swift/badge/icon)](https://jenkins.dragomirecky.com/job/swift-embedded/job/swift/)
 
 
