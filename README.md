@@ -36,7 +36,7 @@ Also, to make building an embedded application as simple as possible, I have cre
 
 ### Installing the toolchain
 
-1. Download the latest build of the toolchain from [here](https://jenkins.dragomirecky.com/job/swift-embedded/job/swift) put the .xctoolchain file to one of `/Library/Developer/Toolchains/` or `~/Library/Developer/Toolchains/`:
+1. Download the latest build of the toolchain from [here](https://jenkins.dragomirecky.com/job/swift-embedded/job/swift) and put the .xctoolchain file to one of `/Library/Developer/Toolchains/` or `~/Library/Developer/Toolchains/`:
 
     ```bash
     $ mkdir -p /Library/Developer/Toolchains
