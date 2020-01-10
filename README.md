@@ -110,6 +110,57 @@ Creating the `destination.json` file is not a trivial task, and always having to
 2. Running `cross build` then a) automatically creates the needed `destination.json` file in the build directory and b) invokes `swift build` with the proper `--destination` flag.
 
 
+### What IDEs are supported?
 
+- Xcode is not (it does not support the newly added `baremetal` platform and its extensibility is very limited).
+- However, the toolchain contains modified `sourcekit-lsp`, therefore you should be able to use any editor with LSP support!
+    - __Visual Studio Code__
+        - For autocompletion, install [sourcekit-lsp](https://marketplace.visualstudio.com/items?itemName=pvasek.sourcekit-lsp--dev-unofficial) extension and set the toolchain's and sourcekit-lsp's paths in settings:
 
+            ```JSON
+            "sourcekit-lsp.serverPath": "/Path/to/toolchain/swift-LOCAL-2020-01-04-a.xctoolchain/usr/bin/sourcekit-lsp",
+            "sourcekit-lsp.toolchainPath": "/Path/to/toolchain/swift-LOCAL-2020-01-04-a.xctoolchain",
+            ```
+        - To integrate `openocd` and `arm-none-eabi-gdb` into vscode, you can use the `Cortex-Debug` extension. Example configuration:
+
+            ```JSON
+            {
+                "cwd": "${workspaceRoot}",
+                "executable": "./.build/debug/Blinky",
+                "name": "Debug Microcontroller",
+                "request": "launch",
+                "type": "cortex-debug",
+                "servertype": "openocd",
+                "configFiles": ["board/st_nucleo_f4.cfg"]
+            }
+            ```
+
+            > `arm-none-eabi-gdb` does not understand Swift, so you won't be able to read Swift variables etc.
+
+   - __Vim__
+       - I use [coc.nvim](https://github.com/neoclide/coc.nvim) with the following settings:
+
+           ```JSON
+               "languageserver": {
+                   "swift": {
+                       "command": "xcrun",
+                       "args": [
+                           "sourcekit-lsp"
+                       ],
+                       "filetypes": [
+                           "swift",
+                           "c",
+                           "cpp"
+                       ],
+                       "initializationOptions": {},
+                       "settings": {},
+                       "rootPatterns": [
+                           "Cross.toml"
+                       ],
+                       "requireRootPattern": true
+                   }
+               ...
+           ```
+
+			> Make sure to have the `TOOLCHAINS` environment variable set!
 
