@@ -165,3 +165,8 @@ Creating the `destination.json` file is not a trivial task, and always having to
 
 			> Make sure to have the `TOOLCHAINS` environment variable set!
 
+## License
+
+- The source code of the modified Swift toolchain is located [here](https://github.com/swift-embedded/swift) and is licensed under the [Apache License 2.0](https://github.com/swift-embedded/swift/blob/master/LICENSE.txt).
+- The build of the baremetal toolchain also includes [GNU Arm Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm) licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
+- The source code in this repository is licensed under the [MIT License](https://github.com/swift-embedded/swift-embedded/blob/master/LICENSE).
