@@ -159,7 +159,6 @@ Creating the `destination.json` file is not a trivial task, and always having to
                        ],
                        "requireRootPattern": true
                    }
-               ...
            ```
 
 			> Make sure to have the `TOOLCHAINS` environment variable set!
