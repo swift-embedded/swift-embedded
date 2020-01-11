@@ -93,6 +93,8 @@ Also, to make building an embedded application as simple as possible, I have cre
     $ xcrun arm-none-eabi-gdb .build/debug/Blinky -ex 'tar ext :3333' -ex 'load'
     ```
 
+    > Always make sure you have set the `TOOLCHAINS` environment variable, so you are using the right toolchain! Or you something like [direnv](https://github.com/direnv/direnv), so you don't have to think about it 😏.
+
 ### Using the Swift Package Manager and the `cross` utility
 
 The Swift Package Manager is fully supported and is part of the pre-built baremetal toolchain. Furthermore, it should be possible to use any existing package for your baremetal application as long as it does not depend on some unsupported library (e. g. _Foundation_).
