@@ -123,7 +123,7 @@ Creating the `destination.json` file is not a trivial task, and always having to
             "sourcekit-lsp.serverPath": "/Path/to/toolchain/swift-LOCAL-2020-01-04-a.xctoolchain/usr/bin/sourcekit-lsp",
             "sourcekit-lsp.toolchainPath": "/Path/to/toolchain/swift-LOCAL-2020-01-04-a.xctoolchain",
             ```
-        - To integrate `openocd` and `arm-none-eabi-gdb` into vscode, you can use the `Cortex-Debug` extension. Example configuration:
+        - To integrate `openocd` and `arm-none-eabi-gdb` into vscode, you can use the `Cortex-Debug` extension. Example launch configuration:
 
             ```JSON
             {
