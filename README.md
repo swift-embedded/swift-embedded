@@ -40,8 +40,10 @@ To make building an embedded application as simple as possible, I have created a
 
     ```bash
     $ mkdir -p /Library/Developer/Toolchains
+    $ sudo xattr -dr com.apple.quarantine <downloaded file>.xctoolchain # required on macOS Catalina only
     $ mv <downloaded file>.xctoolchain ~/Library/Developer/Toolchains
     ```
+    > Why the `xattr -dr ...` on macOS Catalina? It makes sure you won't get the "XYZ can’t be opened because Apple cannot check it for malicious software" message. The toolchain is properly signed, but it is currently not notarized, as Apple newly requires (starting from Feb 2020) the _hardened runtime_ feature to be enabled and this seems to break the toolchain. I hope to resolve this soon!
 
 2. Activate the toolchain with:
 
